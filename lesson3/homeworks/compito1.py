@@ -1,23 +1,12 @@
-# txt="Ciao \t\"Enkk\", prova"
-# print("Ciao" or "prova" in txt)
-
-
-# txt2="Silicon Valley"
-# print(txt2.split("i"))
-
-# x="-".join(["code","is","ok"])
-# x="-".join(txt2)
-# print(x)
+print("\n____________________________________________\n\n")
+print("compito 1\n___________________\n")
 
 list_txt=[]
-list_pr=["ciao","come","stai",",","tutto","bene","?","si","grazie"]
-list_pr=list_pr[:-1]
-print(list_pr)
 
 while "stop" not in list_txt:
     txt=input("Please, insert a single word or \", ! ?\" characters: ")
     txt_strip=txt.strip()
-
+#memo: quale controllo implementare per ammettere solo la punteggiatura ', . ! ?' e anche solo testo a-z/A-Z??
     if txt_strip!="":
         if txt_strip.find(" ")!=-1:
             print(f"error! space detected in {txt_strip}. Remind: insert just ONE word")
@@ -26,20 +15,14 @@ while "stop" not in list_txt:
             join=" ".join(list_txt)
             if "stop" in join:
                 index_stop=join.find("stop")
-                join=join[:index_stop-1]+" "
+                join=join[:index_stop-1]
                 for c in join:
                     if ("," in c or "." in c or "!" in c or "?" in c):
+                        c=c.strip()
                         join=join.replace(f" {c} ",f"{c}\n")
-                        # if ("," not in c):
-                        #     print(c)                    
+#memo: capitalize delle lettere dopo la punteggiatura?
     else:
         print("Empty!")
 
     
 print(join)
-
-print("\n Inserts completed! \n Now, some useful info:")
-for c in join:
-    if ("," not in c or "." not in c or "!" not in c or "?" not in c or " " not in c):
-        total=sum(len(c))
-print(total)
