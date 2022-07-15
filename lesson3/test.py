@@ -23,30 +23,38 @@ while "stop" not in list_txt:
             print(f"error! space detected in {txt_strip}. Remind: insert just ONE word")
         else:
             list_txt.append(txt_strip)
-            join_list_txt=" ".join(list_txt)
-            if "stop" in join_list_txt:
+
+            if "stop" in list_txt[-1]:
+                list_txt[0]=list_txt[0].capitalize()
+
+                for i in range(len(list_txt)):
+                    if ("." in list_txt[i] or "!" in list_txt[i] or "?" in list_txt[i]):               
+                        if list_txt[i+1]!="stop":
+                            list_txt[i+1]=list_txt[i+1].capitalize()   
+
+                print(list_txt)
+
+                join_list_txt=" ".join(list_txt)
                 index_stop=join_list_txt.find("stop")
-                join_list_txt=join_list_txt[:index_stop-1]+" "
-                join_list_txt=join_list_txt.capitalize()
+                join_list_txt=join_list_txt[:index_stop-1]+" "                
                 
                 for c in join_list_txt:
                     
-                    if ("." in c or "!" in c or "?" in c):                       
-                        c=c.strip()
-                        find_c=join_list_txt.find(c)                        
+                    if ("." in c or "!" in c or "?" in c):                  
+                        c=c.strip()      
                         join_list_txt=join_list_txt.replace(f" {c} ",f"{c}\n")
-                        join_list_txt=join_list_txt.replace(f"{join_list_txt[find_c+2]}\n",f"{join_list_txt[find_c+2].capitalize()}\n")
                         
                         
                     if ("," in c):
                         c=c.strip()                        
-                        join_list_txt=join_list_txt.replace(f" {c} ",f"{c} ")
+                        join_list_txt=join_list_txt.replace(f" {c} ",f"{c} ")                     
                                
     else:
         print("Empty!")
 
     
 print(join_list_txt)
+
 
 # print("\n Inserts completed! \n Now, some useful info:")
 
