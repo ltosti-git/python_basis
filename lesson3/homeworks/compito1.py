@@ -19,8 +19,9 @@ list_txt=[]
 while "stop" not in list_txt:
     txt=input("Please, insert a single word or \", ! ?\" characters: ")
     txt_strip=txt.strip()
-    #memo: quale controllo implementare per ammettere solo la punteggiatura ', . ! ?' e anche solo testo a-z/A-Z??
+    #memo: implements checks and controls for admitting only following punctuation ', . ! ?' and [a-z][A-Z] text
     if txt_strip!="":
+        
         if txt_strip.find(" ")!=-1:
             print(f"error! space detected in {txt_strip}. Remind: insert just ONE word")
         else:
@@ -28,18 +29,17 @@ while "stop" not in list_txt:
 
             if "stop" in list_txt[-1]:
                 list_txt[0]=list_txt[0].capitalize()
-
+                #loop for capitalize all the words after full stop and marks
                 for i in range(len(list_txt)):
                     if ("." in list_txt[i] or "!" in list_txt[i] or "?" in list_txt[i]):               
                         if list_txt[i+1]!="stop":
                             list_txt[i+1]=list_txt[i+1].capitalize()   
 
-                print(list_txt)
-
                 join_list_txt=" ".join(list_txt)
                 index_stop=join_list_txt.find("stop")
-                join_list_txt=join_list_txt[:index_stop-1]+" "                
-                
+                join_list_txt=join_list_txt[:index_stop-1]+" "       
+
+                #loop for paragraph after punctuation
                 for c in join_list_txt:
                     
                     if ("." in c or "!" in c or "?" in c):                  

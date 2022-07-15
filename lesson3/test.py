@@ -56,28 +56,28 @@ while "stop" not in list_txt:
 print(join_list_txt)
 
 
-# print("\n Inserts completed! \n Now, some useful info:")
+print("\n Inserts completed! \n Now, some useful info:")
 
-# join_list_txt_dict={}
-# join_list_txt=join_list_txt.replace("\n","")
-# join_list_txt=join_list_txt.replace(",","")
-# print(join_list_txt)
-# for one_char in join_list_txt:
-#     if ("," in one_char or " " in one_char or "." in one_char or "!" in 
-#     one_char or "?" in one_char or " " in one_char):
-#         join_list_txt=join_list_txt.replace(f"{one_char}",f"")
+join_list_txt_dict={}
+join_list_txt=join_list_txt.replace("\n","")
+join_list_txt=join_list_txt.replace(",","")
+print(join_list_txt)
+for one_char in join_list_txt:
+    if ("," in one_char or " " in one_char or "." in one_char or "!" in 
+    one_char or "?" in one_char or " " in one_char):
+        join_list_txt=join_list_txt.replace(f"{one_char}",f"")
 
-#     if one_char in join_list_txt_dict.keys():
-#         join_list_txt_dict[one_char]+=1
-#     else:
-#         join_list_txt_dict[one_char]=1
-# print(join_list_txt_dict)
+    if one_char in join_list_txt_dict.keys():
+        join_list_txt_dict[one_char]+=1
+    else:
+        join_list_txt_dict[one_char]=1
+print(join_list_txt_dict)
 
-# prova=["zero",",","uno"]
-# for i in range(len(prova)):
-#     if "," in prova[i]:
-#         #print(prova[i])
-#         prova[i]=prova[i].replace(prova[i],"")
-#         #print(asd)
-#     print(prova[i])
+prova=["zero",",","uno"]
+for i in range(len(prova)):
+    if "," in prova[i]:
+        #print(prova[i])
+        prova[i]=prova[i].replace(prova[i],"")
+        #print(asd)
+    print(prova[i])
     
