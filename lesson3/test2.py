@@ -7,3 +7,13 @@ for i in range(len(list_txt)):
         #print(i)
 print(sum_words)
 
+# txt="Ciao \t\"Enkk\", prova"
+# print("Ciao" or "prova" in txt)
+
+
+# txt2="Silicon Valley"
+# print(txt2.split("i"))
+
+# x="-".join(["code","is","ok"])
+# x="-".join(txt2)
+# print(x)
