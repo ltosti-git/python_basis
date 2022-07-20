@@ -1,5 +1,5 @@
-#list_txt=["ciao","come","stai",",","tutto","bene","?","si","grazie",".","tu","?","non","male",".","stop"]
-#list_txt=["bene","?","si",".","tu","?","male"]
+#list_txt=["ciao","come","stai",",","tutto","bene","?","si","grazie",".","tu","?","non","male",".","ciao","come","stai",",","tutto","bene","?","si","grazie",".","tu","?","non","male",".","stop"]
+list_txt=["ciao","pippo","ciao","pluto","paperino","topolino","paperino"]
 
 nList=[-5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6]
 
@@ -52,12 +52,16 @@ print(res_is_positive)
 
 
 def no_duplicate(list):
-    set_list=set()
-    for i in range(len(list)):
-        set_list.add(list[i])
+    # set_list=set()
+    # for i in range(len(list)):
+    #     set_list.add(list[i])
+    set_list=[]
+    for word in list:
+        if word not in set_list:
+            set_list.append(word)
     return set_list
     
-result_no_duplicate=no_duplicate(nList)
+result_no_duplicate=no_duplicate(list_txt)
 print(result_no_duplicate)
 
 
@@ -78,10 +82,11 @@ def factorial(n):
 result_fact=factorial(number)
 print(result_fact)
 
-
+palindrome="radar"
 def is_palindrome(string):
     print(string)
 
+res_is_palindrome=is_palindrome(palindrome)
 
 
 

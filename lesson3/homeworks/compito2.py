@@ -1,5 +1,7 @@
 def main():
     print("calls other functions")
+    print("_______________________________________________\n")
+
     list_txt=["ciao","come","stai",",","tutto","bene","?","si","grazie",".","tu","?","non","male",".","ciao","come","stai",",","tutto","bene","?","si","grazie",".","tu","?","non","male",".","stop"]
     res_rev=rev(list_txt)
     print(f"reverse list is:\n{res_rev}")
@@ -13,10 +15,10 @@ def main():
     
     nList=[-5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6]
 
-    result_no_duplicate=no_duplicate(nList)
+    result_no_duplicate=no_duplicate(list_txt)
     print(result_no_duplicate)
     
-    number=5
+    number=6
     result_fact=factorial(number)
     print(f"Factorial of {number} is: {result_fact}")
 
@@ -39,9 +41,10 @@ def is_positive(n):
         return True       
 
 def no_duplicate(list):
-    set_list=set()
-    for i in range(len(list)):
-        set_list.add(list[i])
+    set_list=[]
+    for word in list:
+        if word not in set_list:
+            set_list.append(word)
     return set_list
 
 # def factorial(n):
@@ -60,7 +63,8 @@ def factorial(n):
 
 if __name__=="__main__":
     # try:
-    print("main foo")
+    print("\nmain foo")
+    print("_______________________________________________\n")
     main()
     # except:
     #     print("troubles")
