@@ -82,12 +82,20 @@ def factorial(n):
 result_fact=factorial(number)
 print(result_fact)
 
-palindrome="radar"
+palindrome="kayak"
 def is_palindrome(string):
-    print(string)
+    string=string.strip().lower().replace(" ","")
+    rev_string=""
+    length_string=len(string)-1
+    for i in range(length_string,-1,-1):
+        rev_string+=string[i]
+    if string == rev_string:
+        return True
+    else:
+        return False         
 
 res_is_palindrome=is_palindrome(palindrome)
-
+print(res_is_palindrome)
 
 
 
