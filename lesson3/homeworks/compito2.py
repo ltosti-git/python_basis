@@ -1,28 +1,36 @@
 def main():
-    print("calls other functions")
+    print("Check functions in main()")
     print("_______________________________________________\n")
 
     list_txt=["ciao","come","stai",",","tutto","bene","?","si","grazie",".","tu","?","non","male",".","ciao","come","stai",",","tutto","bene","?","si","grazie",".","tu","?","non","male",".","stop"]
     res_rev=rev(list_txt)
     print(f"reverse list is:\n{res_rev}")
 
-    res_is_positive=is_positive(3202)
+    # if rev(list_txt):
+    #     print("rev() function working out correctly")
+    # else:
+    #     print("rev() function not properly working")
 
-    if res_is_positive == True or res_is_positive == False:
-        print("is_positive function working out correctly")
-    else:
-        print("is_positive function not properly working")
+    number=3202
+    res_is_positive=is_positive(number)
+    print(f"this number {number} is:\n")
+    print(f'{f"{number:.2f}" if res_is_positive else "prova"}')
+
+    # if res_is_positive == True or res_is_positive == False:
+    #     print("is_positive() function working out correctly")
+    # else:
+    #     print("is_positive() function not properly working")
 
     result_no_duplicate=no_duplicate(list_txt)
-    print(result_no_duplicate)
+    print(f"The list without duplicates is:\n{result_no_duplicate}")
     
     palindrome="Was it a car or a cat I saw"
     res_is_palindrome=is_palindrome(palindrome)
-    print(f"This '{palindrome}' is a palindrome? {res_is_palindrome}")
+    print(f"This '{palindrome}' is a palindrome?\n{res_is_palindrome}")
 
     number=6
     result_fact=factorial(number)
-    print(f"Factorial of {number} is: {result_fact}")
+    print(f"Factorial of {number} is:\n{result_fact}")
 
 ## get reverse of a list
 def rev(list):
@@ -36,10 +44,10 @@ def rev(list):
 def is_positive(n):
     
     if n<0:
-        #print(f"Number {n} is negative!")       
+        print(f"Number {n} is negative!")       
         return False   
     else:
-        #print(f"Number {n} is positive!")
+        print(f"Number {n} is positive!")
         return True       
 
 ## remove duplicates in a list
@@ -78,7 +86,7 @@ def is_palindrome(string):
 
 if __name__=="__main__":
     # try:
-    print("\nmain foo")
+    print("\nmain() function")
     print("_______________________________________________\n")
     main()
     # except:

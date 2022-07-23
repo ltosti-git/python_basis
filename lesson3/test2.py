@@ -120,3 +120,11 @@ print(res_is_palindrome)
 # x="-".join(["code","is","ok"])
 # x="-".join(txt2)
 # print(x)
+
+
+# def modulo(x=int):
+#     if x >= 0: return x
+#     else: return -x
+
+# res=modulo(-345)
+# print(res)
