@@ -15,11 +15,16 @@ with open(f1_path,'r') as f_01:
 
 #print(l1,l2)
 
-matrix=np.zeros((3, 3), dtype=np.int16)
+matrix=np.zeros((len(l1), len(l2)), dtype=np.int16)
 #print(matrix.dtype)
-matrix[0][0]=(l1[0]+l2[0])
-matrix[1][1]=(l1[1]+l2[1])
-matrix[-1][-1]=(l1[2]+l2[2])
+# matrix[0][0]=(l1[0]+l2[0])
+# matrix[1][1]=(l1[1]+l2[1])
+# matrix[-1][-1]=(l1[2]+l2[2])
+
+for i in range(len(l1)):
+    for j in range(len(l1)):
+        if i == j:
+            matrix[i][i]=l1[i]+l2[i]
 
 
 with open(f2_path,'w') as f_02:
