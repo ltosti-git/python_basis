@@ -3,8 +3,6 @@
 f1_path='lesson4/data/file_compito4.txt'
 f2_path='lesson4/data/file_compito4_matrice.txt'
 
-l1=[]
-l2=[]
 matrix=[]
 
 with open(f1_path,'r') as f_01:
@@ -23,27 +21,24 @@ with open(f1_path,'r') as f_01:
 # matrix[-1][-1]=(l1[2]+l2[2])
 
 # for i in range(len(l1)):
-#     for j in range(len(l1)):
+#     for j in range(len(l2)):
 #         if i == j:
 #             matrix[i][i]=l1[i]+l2[i]
 
-for i in range(len(l1)):
-    line=[0] * len(l1)
-    line[i]=l1[i]+l2[i]
-    matrix.append(line)
+# for i in range(len(l1)):
+#     line=[0] * len(l1)
+#     line[i]=l1[i]+l2[i]
+#     matrix.append(line)
 #print(matrix)
 
-# for line in matrix:
-#     for x in line:
-#         line=str(x)
-#         print(line)
+for i in range(len(l1)):
+    matrix.append([0] * len(l1))
+    for j in range(len(l2)):
+        if i == j:
+            matrix[i][i]=l1[i]+l2[i]
+#print(matrix)
 
 with open(f2_path,'w') as f_02:
     for line in matrix:
         f_02.write(" ".join([str(x) for x in line]))
         f_02.write('\n')
-
-#print(matrix)
-
-
-
