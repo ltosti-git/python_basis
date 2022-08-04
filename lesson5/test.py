@@ -15,17 +15,29 @@ users_json=users.json()
 
 for user in users_json:
     name=user['name']
-    userid=user['id']
-    #print(user['name'],user['id'])
+    id=user['id']
+    #print(userid)
     table.field_names=[name,"TODO"]
+    
+
 
 for todo in todos_json:
     userId=todo['userId']
     title=todo["title"]
     completed=todo["completed"]
-    #print(todo['userId'],todo["title"],todo["completed"])    
+    print(id)
 
-print(table)
+    if id==userId and completed==True:
+        table.add_row([title,"V"])
+    else:
+        table.add_row([title,"X"])
+
+        
+        #print(todo['userId'],todo["title"],todo["completed"])   
+    print(table)
+     
+
+#print(table)
 
 
 
