@@ -24,7 +24,7 @@ try:
             lon=v['lon']
 
             # request to api with obtained datas and parsing response in json
-            api_call=requests.get(f"{api_meteo}forecast?latitude={lat}&longitude={lon}&hourly=temperature_2m&hourly=apparent_temperature&timezone=CET").json()
+            api_call=requests.get(f"{api_meteo}forecast?latitude={lat}&longitude={lon}&hourly=temperature_2m&hourly=apparent_temperature&timezone=Europe/Rome").json()
             
             dates=api_call["hourly"]["time"]
             for i in range(len(dates)):
