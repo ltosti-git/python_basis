@@ -12,25 +12,34 @@ users_json=users.json()
 
 #print(todos_json)
 #print(users_json)
-
+names={}
 for user in users_json:
-    name=user['name']
     id=user['id']
-    #print(userid)
-    table.field_names=[name,"TODO"]
-    
+    name=user['name']
+    names[name]=id
+#print(names)    
+#table.field_names=[name,"TODO"]
 
+for k,v in names.items():    
+    #print(names[k])
 
-for todo in todos_json:
-    userId=todo['userId']
-    title=todo["title"]
-    completed=todo["completed"]
-    print(id)
-
-    if id==userId and completed==True:
-        table.add_row([title,"V"])
-    else:
-        table.add_row([title,"X"])
+    for todo in todos_json:
+        userId=todo['userId']
+        title=todo["title"]
+        completed=todo["completed"]
+        table.field_names=[k,"TODO"]
+        if names[k]==userId and completed==True:    
+            #print(userId)
+            #print(completed)
+            table.add_row([title,"V"])
+        # if names[k]==userId and completed==False:    
+        #     print(userId)
+        #     print(completed)
+            #table.add_row([title,"V"])
+        # elif names[k]==userId and completed==False:
+        #     table.add_row([title,"X"])
+        # else:
+        #     print("no association!")
 
         
         #print(todo['userId'],todo["title"],todo["completed"])   
