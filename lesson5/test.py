@@ -32,21 +32,8 @@ for k,v in names.items():
             #print(userId)
             #print(completed)
             table.add_row([title,"V"])
-        # if names[k]==userId and completed==False:    
-        #     print(userId)
-        #     print(completed)
-            #table.add_row([title,"V"])
-        # elif names[k]==userId and completed==False:
-        #     table.add_row([title,"X"])
-        # else:
-        #     print("no association!")
-
+        if names[k]==userId and completed==False:
+            table.add_row([title,"X"])        
         
-        #print(todo['userId'],todo["title"],todo["completed"])   
-    print(table)
+print(table)
      
-
-#print(table)
-
-
-
