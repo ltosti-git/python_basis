@@ -3,7 +3,7 @@ import json,requests
 
 url_todos='https://jsonplaceholder.typicode.com/todos/'
 url_users='https://jsonplaceholder.typicode.com/users/'
-table=PrettyTable()
+#table=PrettyTable()
 
 todos=requests.get(url_todos)
 todos_json=todos.json()
@@ -17,8 +17,8 @@ for user in users_json:
     id=user['id']
     name=user['name']
     names[name]=id
-#print(names)    
-#table.field_names=[name,"TODO"]
+#print(len(names))
+
 
 for k,v in names.items():    
     #print(names[k])
@@ -27,13 +27,16 @@ for k,v in names.items():
         userId=todo['userId']
         title=todo["title"]
         completed=todo["completed"]
-        table.field_names=[k,"TODO"]
-        if names[k]==userId and completed==True:    
-            #print(userId)
-            #print(completed)
-            table.add_row([title,"V"])
-        if names[k]==userId and completed==False:
-            table.add_row([title,"X"])        
+        table=PrettyTable()
+        for i in range(len(names)):
+            
+            table.field_names=[k,"TODO"]
+            if names[k]==userId and completed==True:    
+                #print(userId)
+                #print(completed)
+                table.add_row([title,"V"])
+            if names[k]==userId and completed==False:
+                table.add_row([title,"X"])        
         
-print(table)
+    print(table)
      
