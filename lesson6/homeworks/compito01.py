@@ -10,7 +10,7 @@ ARTISTS_PATH='lesson6/data/artists.json'
 
 with open(ARTISTS_PATH) as file:
     artists_dict=json.load(file)
-    artists_name = artists_dict.keys()
+    artists_name=artists_dict.keys()
 keep_asking="Y"
 
 while keep_asking.upper()=="Y":
@@ -23,8 +23,7 @@ while keep_asking.upper()=="Y":
             raise Exception("You must digit just number 1 or number 2!")
             
         artist_id1=artists_dict[two_artists[0]]
-        artist_id2=artists_dict[two_artists[1]]
-            
+        artist_id2=artists_dict[two_artists[1]]            
         
         artist01_albums=get_albums(artist_id1)
         artist02_albums=get_albums(artist_id2)
@@ -41,5 +40,4 @@ while keep_asking.upper()=="Y":
         print("You must digit an integer!")
     except Exception as exception:
         print(exception)
-
     
