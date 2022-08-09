@@ -7,8 +7,8 @@ import json, requests, random
 def get_fans(id):
     api_url="https://api.deezer.com/artist"
     response=requests.get(f"{api_url}/{id}").json()
-    album_nr=response['nb_fan']
-    return album_nr
+    fans_nr=response['nb_fan']
+    return fans_nr
     
 ARTISTS_PATH='lesson6/data/artists.json'
 
