@@ -4,7 +4,8 @@ import json
 DEEZER_SEARCH_ARTIST_API = "https://api.deezer.com/search/artist"
 
 # edit this list
-to_be_searched_artits = ["Elio e le storie tese", "Queen", "Eminem", "Al Bano", "Mina", "Ghali", "Muse", "The Beatles", "The Rolling Stones", "Micheal Jackson"]
+to_be_searched_artits = ["Elio e le storie tese", "Queen", "Eminem", "Al Bano", "Mina", "Ghali", "Muse", "The Beatles", "The Rolling Stones", "Micheal Jackson", "Pink Floyd", "White Stripes", "Lucio Battisti", "Massimo Ranieri", "Janis Joplin", "Bob Dylan", "Deep Purple", "The Strokes", "Creedence Clearwater Revival", "Jamiroquai"]
+
 
 results = {}
 
@@ -25,3 +26,7 @@ print("")
 print("Final id map:")
 # copy paste it into artist.json
 print(json.dumps(results))
+
+ARTISTS_PATH='lesson6/data/artists.json'
+with open(ARTISTS_PATH, 'w') as file:
+	file.write(json.dumps(results))

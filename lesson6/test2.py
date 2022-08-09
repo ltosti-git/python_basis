@@ -1,3 +1,7 @@
+'''
+Modificare il Compito 1 in modo da chiedere di indovinare chi ha più fan e non chi ha più album. Aggiungere anche nuovi artisti e testare che le chiamate API funzionino.
+'''
+
 import json, requests, random
 
 def get_albums(id):
@@ -32,7 +36,7 @@ while keep_asking.upper()=="Y":
         
         feedback="Correct!" if answer==solution else "Not correct!"
 
-        feedback+=f" First artist {two_artists[0]} has {artist01_albums}, while second one {two_artists[1]} has {artist02_albums}.\nDo you wanna continue (Y/n)?"
+        feedback+=f" First artist {two_artists[0]} have {artist01_albums}, while second one {two_artists[1]} have {artist02_albums}.\nDo you wanna continue (Y/n)?"
 
         keep_asking=input(feedback)
 
